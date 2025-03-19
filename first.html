@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Velveteen Rabbit</title>
+  <style>
+    :root {
+      --primary-color: #96B78A;
+      --text-color: #333;
+      --bg-color: #fcfcfc;
+      --annotation-bg: #f5f5f5;
+      --mark-color: rgba(150, 183, 138, 0.4);
+      --divider-color: #ddd;
+      --spacing-unit: clamp(0.5rem, 2vw, 1rem);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      font-size: clamp(16px, 3vw, 18px);
+    }
+    .title-block {
+      text-align: center;
+      padding: var(--spacing-unit);
+      background-color: var(--primary-color);
+      color: white;
+      margin-bottom: var(--spacing-unit);
+    }
+    .byline {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+    .intro {
+      max-width: min(800px, 95%);
+      margin: 0 auto var(--spacing-unit);
+      padding: 0 var(--spacing-unit);
+    }
+    .small {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .maincontent {
+      max-width: min(1200px, 95%);
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+    }
+    .group {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-unit);
+      padding-bottom: var(--spacing-unit);
+      border-bottom: 1px solid var(--divider-color);
+    }
+    @media (min-width: 768px) {
+      .group {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+    .group.first {
+      padding-top: 0;
+    }
+    .group.last {
+      border-bottom: none;
+    }
+    .content {
+      padding: var(--spacing-unit);
+    }
+    .quote {
+      font-size: clamp(1rem, 2.5vw, 1.1rem);
+    }
+    .note {
+      background-color: var(--annotation-bg);
+      border-radius: 0.5rem;
+    }
+    mark {
+      cursor: pointer;
+      position: relative;
+      background-color: transparent;
+    }
+    mark::after {
+      content: attr(data-annotation-id);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.2em;
+      font-size: clamp(0.7em, 2vw, 0.75em);
+      font-weight: 500;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      border: 1.5px solid var(--text-color);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      vertical-align: super;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .annotation-group {
+      margin-bottom: var(--spacing-unit);
+      padding-left: calc(var(--spacing-unit) * 0.5);
+      border-left: 3px solid var(--primary-color);
+    }
+    .annotation {
+      margin-bottom: 0.5rem;
+    }
+    .commenter {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+    .thread {
+      margin-left: 1rem;
+      padding-left: 0.5rem;
+      border-left: 2px solid var(--primary-color);
+    }
+    .thread-2 {
+      margin-left: 2rem;
+    }
+    .thread-3 {
+      margin-left: 3rem;
+    }
+    .outro {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid var(--divider-color);
+      padding-top: 2rem;
+    }
+    .fine-print {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+    a {
+      color: #5B8266;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight {
+      background-color: rgba(150, 183, 138, 0.2);
+      border-left-color: #5B8266;
+    }
+    .active {
+      background-color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+<body>
+  <div class="title-block">
+    <h1>The Velveteen Rabbit</h1>
+    <div class="byline">
+      By Margery Williams, <a href="https://en.wikisource.org/wiki/The_Velveteen_Rabbit">originally published</a> 
+      in 1922
+    </div>
+    <div class="byline">Annotations by Loki Perera.</div>
+  </div>
+  <div class="intro">
+    <p>Introductory text goes here.</p>
+    <p class="small">
+      Use the <code>small</code> class to add explanatory notes.
+    </p>
+  </div>
+  <main class="maincontent">
+    <article class="article">
+      <section class="group first">
+        <div class="content quote">
+          <p>There was once a velveteen rabbit, and in the beginning he was really splendid. He was fat and bunchy<mark data-annotation-id="1" aria-details="annotation-1"></mark>, as a rabbit should be; his coat was spotted brown and white, he had real thread whiskers, and his ears were lined with pink sateen.</p>
+        </div>
+        <div class="content note">
+          <div class="annotation-group" role="comment" data-annotation-id="1" id="annotation-1">
+            <div class="annotation">
+              <div class="commenter">Molly White</div>
+              A standalone comment. There's only one in this paragraph, so it doesn't have a number.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="group">
+        <div class="content quote">
+          <p>There were other things in the stocking, nuts and oranges and a toy engine, and chocolate almonds and a clockwork mouse, but the Rabbit was quite the best of all. For at least two hours the Boy loved him, and then Aunts and Uncles came to dinner, and there was a great rustling of tissue paper and unwrapping of parcels, and in the excitement of looking at all the new presents the Velveteen Rabbit was forgotten.</p>
+        </div>
+      </section>
+      <section class="group">
+        <div class="content quote">
+          <p>For a long time he lived in the toy cupboard or on the nursery floor, and no one thought very much about him. He was naturally shy, and being only made of velveteen, some of the more expensive toys quite snubbed him. The mechanical toys were very superior, and looked down upon every one else; they were full of modern ideas, and pretended they were real. The model boat, who had lived through two seasons and lost most of his paint, caught the tone from them and never missed an opportunity of referring to his rigging in technical terms. The Rabbit could not claim to be a model of anything, for he didn't know that real rabbits existed<mark data-annotation-id="2" aria-details="annotation-2"></mark>; he thought they were all stuffed with sawdust like himself, and he understood that sawdust was quite out-of-date and should never be mentioned in modern circles. Even Timothy, the jointed wooden lion, who was made by the disabled soldiers, and should have had broader views, put on airs and pretended he was connected with Government<mark data-annotation-id="3" aria-details="annotation-3"></mark>. Between them all the poor little Rabbit was made to feel himself very insignificant and commonplace, and the only person who was kind to him at all was the Skin Horse.</p>
+        </div>
+        <div class="content note">
+          <div class="annotation-group" role="comment" data-annotation-id="2" id="annotation-2">
+            <div class="annotation">
+              <div class="commenter">Molly White</div>
+              A comment with indented responses.
+            </div>
+              <div class="annotation thread thread-3">
+                <div class="commenter">Another commenter</div>
+                A reply!
+              </div>
+              <div class="annotation thread thread-3">
+                <div class="commenter">Molly White</div>
+                A retort!
+              </div>
+          </div>
+          <div class="annotation-group" role="comment" data-annotation-id="3" id="annotation-3">
+            <div class="annotation">
+              <div class="commenter">Molly White</div>
+              Another standalone comment. This one has a response, but it isn't indented because it doesn't have the thread class applied.
+            </div>
+              <div class="annotation thread thread-3">
+                <div class="commenter">Molly White</div>
+                A reply!
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="group last">
+        <div class="content quote">
+          <p>will this work?<mark data-annotation-id="8" aria-details="annotation-8"></mark></p>
+        </div>
+        <div class="content note">
+          <div class="annotation-group" role="comment" data-annotation-id="8" id="annotation-8">
+            <div class="annotation">
+              
+              Another standalone comment. This one has a response, but it isn't indented because it doesn't have the thread class applied. for he didn't know that real rabbits existed^2; he thought they were all stuffed with sawdust like himself, and he understood that sawdust was quite out-of-date and should never be mentioned in modern circles. Even Timothy, the jointed wooden lion, who was made by the disabled soldiers,
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="outro">
+    <div class="fine-print">
+      <p>
+        Page built with the Annotation System.
+      </p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find all marks
+      const marks = document.querySelectorAll('mark');
+      
+      // Add click event to highlight associated annotation
+      marks.forEach(mark => {
+        mark.addEventListener('click', function() {
+          const annotationId = this.getAttribute('aria-details');
+          const annotation = document.getElementById(annotationId);
+          
+          // Remove highlight from all annotations
+          document.querySelectorAll('.annotation-group').forEach(anno => {
+            anno.classList.remove('highlight');
+          });
+          
+          // Add highlight to the selected annotation
+          if (annotation) {
+            annotation.classList.add('highlight');
+            annotation.scrollIntoView({behavior: 'smooth', block: 'center'});
+          }
+        });
+      });
+      
+      // Add hover effect
+      marks.forEach(mark => {
+        mark.addEventListener('mouseenter', function() {
+          const annotationId = this.getAttribute('data-annotation-id');
+          document.querySelectorAll(`mark[data-annotation-id="${annotationId}"]`).forEach(m => {
+            m.classList.add('active');
+          });
+        });
+        
+        mark.addEventListener('mouseleave', function() {
+          const annotationId = this.getAttribute('data-annotation-id');
+          document.querySelectorAll(`mark[data-annotation-id="${annotationId}"]`).forEach(m => {
+            m.classList.remove('active');
+          });
+        });
+      });
+      
+      // Add annotation hover effect to show corresponding text
+      document.querySelectorAll('.annotation-group').forEach(anno => {
+        anno.addEventListener('mouseenter', function() {
+          const annotationId = this.getAttribute('data-annotation-id');
+          document.querySelectorAll(`mark[data-annotation-id="${annotationId}"]`).forEach(m => {
+            m.classList.add('active');
+          });
+        });
+        
+        anno.addEventListener('mouseleave', function() {
+          const annotationId = this.getAttribute('data-annotation-id');
+          document.querySelectorAll(`mark[data-annotation-id="${annotationId}"]`).forEach(m => {
+            m.classList.remove('active');
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
