@@ -233,12 +233,7 @@ function convertMarkdownToAnnotatedHTML(markdownContent, outputFile) {
     </div>
     ${annotator ? `<div class="byline">Annotations by ${annotator}.</div>` : ''}
   </div>
-  <div class="intro">
-    <p>Introductory text goes here.</p>
-    <p class="small">
-      Use the <code>small</code> class to add explanatory notes.
-    </p>
-  </div>
+
   <main class="maincontent">
     <article class="article">`;
 
